@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+body{
+    background: linear-gradient(#068491, #055189);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1{
+    font-family: squid-junkie-font;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding: .4rem 1rem; 
+    border-radius: 999px; 
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+img {
+    mask-image: radial-gradient(black 40%, transparent)
+}
+
+.information {
+    width: 20vw;
+    display: none;
+    position: absolute;
+    justify-self: right;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    margin: 10px; 
+    min-width: 150px;
+    max-height: 100vh; 
+    border: 1px solid #068491;
+    border-radius: 8px;
+    z-index: 100;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-size: 14px;
+    border-color: #ffeb3b; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.thefishbowl {
+    width: 20vw;
+    display: none;
+    position: absolute;
+    justify-self: right;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    margin: 10px; 
+    height: 20vh; 
+    bottom: 10px; 
+    border: 1px solid #068491;
+    border-radius: 8px;
+    z-index: 100;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-size: 14px;
+    border-color: #ffeb3b; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav{
+    display: flex;
+    gap: 20px;
+    position: absolute; 
+    right: 2rem;
+    color: white; 
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    padding: 1rem 2rem;
+    min-height: 60px;
+}
+
+.fishiename{
+    margin-bottom: 10px;
+}
+
+.close-info {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.close-info:hover {
+    color: #d9534f; 
+}
+
+.infobutton{
+    margin-top: .3rem; 
+    border: .1rem solid #068491;
+    padding: .5rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.infobutton:hover {
+    border: .1rem solid #ffeb3b;
+}
+
+.fishbowldelete {
+    margin-top: .3rem; 
+    border: .1rem solid #068491;
+    padding: .2rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: none;
+}
+
+.fishbowldelete:hover {
+    border: .1rem solid #d9534f;
+}
+
+@font-face {
+    font-family: "squid-junkie-font";
+    src: url('squid-junkie-font/SquidJunkiePersonalUseRegular-Wyno4.otf');
+}
+
+
+@keyframes grayling {
+    0%  { transform: translateX(-8vw) scaleX(1); }
+    20%  { transform: translateX(-8vw) scaleX(1); }
+    49.5% {transform: translateX(100vw); }
+    50% {transform: translateX(101vw) scaleX(-1);}
+    89.5%   { transform: translateX(0) scaleX(-1); }
+    90% {transform: translateX(-8vw) scaleX(1);}
+    100% {transform: translateX(-8vw) scaleX(1);}
+}
+
+@keyframes graylinghover {
+    0%  { transform: scale(1); }
+    100% {transform: scale(1.1);}
+}
+
+@keyframes mullet {
+    0%{offset-distance: 0%;}
+  40% { offset-distance: 0%; }
+    59.9%{transform: scale(1);}
+  60% { offset-distance: 100%; }
+  60.1% { transform: scale(0);}
+    79.9%{transform: scale(0);}
+    80%{transform: translateX(-400px) translateY(600px)}
+    100%{transform: translateX(100vw) translateY(60vh);}
+}
+
+@keyframes coho {
+    0% {offset-distance: 0%;}
+    100% {offset-distance: 100%;}
+}
+
+@keyframes catfish{
+    0% {offset-distance: 0%;}
+    40% {offset-distance: 100%;}
+    50% {transform: scale(1);}
+    50.5%{transform: scaleX(-1)}
+    100% {transform: scaleX(-1) translateX(-100vw);}
+}
+
+@keyframes trout {
+    0% {transform: translateX(20vw) translateY(57vh);}
+    10% {transform: translateX(-30vw) translateY(60vh);}
+    15% {transform: translateX(-10vw) translateY(57vh) scaleX(-1);}
+    70% {transform: translateX(140vw) translateY(48vh) scaleX(-1) rotate(10deg);}
+    75% {transform: translateX(150vw) translateY(48vh) scaleX(1);}
+    100% {transform: translateX(20vw) translateY(57vh) scaleX(1);}
+}
+
+@keyframes pike {
+    0% {
+        offset-distance: 0%;
+        offset-rotate: auto 180deg;
+    }
+    49.9% {
+        offset-distance: 50%; 
+        transform: scale(1);
+    }
+    50% {
+        offset-distance: 53%;
+        offset-rotate: auto 180deg;
+        transform: scaleX(1) scaleY(-1); 
+    }
+    100% {
+        offset-distance: 100%;
+        offset-rotate: auto 180deg;
+        transform: scaleX(1) scaleY(-1);
+    }
+}
+
+@keyframes sawshark {
+    0% {transform: translateX(100vw) translateY(60vh);}
+    20% {transform: translateX(60vw) translateY(70vh);}
+    28% {transform: translateX(40vw) translateY(85vh);}
+    40% {transform: translateX(15vw) translateY(110vh);}
+    56% {transform: translateX(-50vw) translateY(90vh);}
+    100% {transform: translateX(-60vw) translateY(110vh);}
+}
+
+@keyframes zebrashark {
+    0%  { transform: translateX(-20vw) scaleX(1) translateY(72vh); }
+    20%  { transform: translateX(-20vw) scaleX(1) translateY(72vh); }
+    49.5% {transform: translateX(100vw) scaleX(1) translateY(72vh); }
+    50% {transform: translateX(115vw) scaleX(-1) translateY(72vh);}
+    89.5%   { transform: translateX(-15vw) scaleX(-1) translateY(72vh); }
+    90% {transform: translateX(-15vw) scaleX(1) translateY(72vh);}
+    100% {transform: translateX(-15vw) scaleX(1) translateY(72vh);}
+}
+
+@keyframes blacktip {
+    0%  { transform: translateX(-15vw) scaleX(1) translateY(15vh); }
+    10%  { transform: translateX(-15vw) scaleX(1) translateY(15vh); }
+    39.5% {transform: translateX(110vw) translateY(15vh); }
+    40% {transform: translateX(115vw) scaleX(-1) translateY(15vh);}
+    69.5%   { transform: translateX(-15vw) scaleX(-1) translateY(15vh); }
+    70% {transform: translateX(-15vw) scaleX(1) translateY(15vh);}
+    100% {transform: translateX(-15vw) scaleX(1) translateY(15vh);}
+}
+
+@keyframes whaleshark {
+     0% {
+        offset-distance: 0%;
+        offset-rotate: auto 180deg;
+    }
+    30% {
+        offset-distance: 35%;
+        offset-rotate: auto 180deg;
+    }
+    48.9% {
+        offset-distance: 59%; 
+        transform: scale(1);
+    }
+    59% {
+        offset-distance: 60%;
+        offset-rotate: auto 180deg;
+        transform: scaleX(1) scaleY(-1); 
+    }
+    100% {
+        offset-distance: 100%;
+        offset-rotate: auto 180deg;
+        transform: scaleX(1) scaleY(-1);
+    }
+}
+
+@keyframes perch {
+    0% {offset-distance: 0%;}
+    50% {offset-distance: 100%;}
+    100%{transform: translateX(1000vw) scale(1);}
+}
+
+.fish.clicked > .fishimg-container{
+    animation-play-state: paused;
+}
+
+body.fish-is-active .fishimg-container {
+    animation-play-state: paused !important;
+}
+
+.fish.clicked > .fishinfo {
+    position: absolute;
+    padding: 10px;
+}
+
+.fishimg-container:hover {
+    animation-play-state: paused;
+}
+
+.fishimg-container:hover img {
+    animation: graylinghover 1s infinite alternate ease-in-out;
+    box-shadow: 0 0 20px rgba(255,255,255,60);
+}
+
+.fishimg-container:hover .fish{
+    animation-play-state: paused;
+}
+
+.fishimg-container img{
+    width: 100%;
+    border-radius: 999px;
+    position: absolute;
+    display: block;
+}
+
+.fishinfo{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    min-width: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    z-index: 100;
+    font-size: 14px; 
+    border-color: #ffeb3b; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.graylingimg-container{ 
+    width: 90px; 
+    animation: grayling 30s ease-in-out infinite;
+    animation-fill-mode: forwards;
+    top: 500px;
+}
+
+.mulletimg-container{
+    width: 90px; 
+    position: relative;
+    offset-path: path("M -100,400 C 500,80 600,50 1000,700");
+    animation: mullet 60s infinite linear reverse;
+    offset-rotate: auto; 
+}
+
+.cohoimg-container{
+    width: 120px; 
+    position: relative;
+    offset-path: path('M -60,100 C 100,0, 200,0, 300,100 S 500,200, 800,100 S 1000,300 1550,100 C 2000,200 2200,-100 1600,0 C 1200,-1000 600,-300 -100,-100 C -500,700 -600,600 -60,100');
+    animation: coho 40s infinite;
+    offset-rotate: auto; 
+}
+
+.catfishimg-container{
+    width: 110px; 
+    position: relative;
+    offset-path: path('M1500,650 C800,450 500,350 -1000,650');
+    animation: catfish 60s infinite;
+    offset-rotate: auto 180deg;
+}
+
+.troutimg-container{
+    width: 100px; 
+    position: relative;
+    animation: trout 50s infinite;
+}
+
+.pikeimg-container{
+    width: 100px; 
+    position: relative;
+    offset-path: path('M1550,500 S1000,800, 800,600 S600,500 500,500 L-100,500 L400,500 S800,400 1500,400');
+    animation: pike 30s infinite;
+    animation-delay: 10s;
+}
+
+.sawsharkimg-container{
+    width: 170px; 
+    position: relative;
+    animation: sawshark 30s infinite;
+    z-index: 99;
+} 
+
+.zebrasharkimg-container{
+    width: 230px; 
+    position: relative;
+    animation: zebrashark 50s infinite ease-in reverse;
+} 
+
+.blacktipimg-container{
+    width: 220px; 
+    position: relative;
+    animation: blacktip 50s infinite cubic-bezier(0.42, 0, 0.58, 1) reverse;
+} 
+
+.whalesharkimg-container{
+    width: 330px; 
+    position: relative;
+    offset-path: path('M1500,300 C900,200 400,400 -300,200 C-400,700 -350,700 -300,300 C200,400 800,400 1600,250');
+    animation: whaleshark 30s infinite;
+    offset-rotate: auto 160deg;
+} 
+
+.perchimg-container{
+    width: 100px; 
+    position: relative;
+    offset-path: path('M-50,300 C0,270 20,260 300,300 S350,250 350,300 S600,300 1000,400');
+    animation: perch 60s infinite ease-in-out;
+    offset-rotate: auto 20deg;
+    animation-delay: 12s;
+}
